@@ -42,7 +42,7 @@ function Index() {
   return (
     <main className="overflow-hidden">
       <section className="bg-hero text-navy-foreground">
-        <div className="mx-auto grid max-w-6xl grid-cols-[1.15fr_0.85fr] items-center gap-4 px-5 py-10 md:grid-cols-2 md:gap-10 md:px-6 md:py-16">
+        <div className="mx-auto grid max-w-6xl grid-cols-[1.15fr_0.85fr] items-stretch gap-4 px-5 py-10 md:grid-cols-2 md:gap-10 md:px-6 md:py-16">
           <div className="flex min-w-0 flex-col items-start">
             <p className="text-xs font-semibold uppercase text-accent md:text-sm">Paddle Circle Philippines</p>
             <h1 className="mt-3 font-display text-5xl uppercase leading-[0.9] md:mt-4 md:text-8xl lg:text-9xl">Coach<br />Jason</h1>
@@ -50,12 +50,11 @@ function Index() {
             <p className="mt-4 font-script text-lg leading-snug md:mt-6 md:text-3xl">Build your game.<br />Train with confidence.<br />Play better.</p>
             <a href="#contact" className="mt-5 inline-block rounded-full bg-accent px-4 py-3 text-xs font-bold uppercase text-accent-foreground transition hover:scale-105 md:mt-8 md:px-8 md:text-base">Book a Session</a>
           </div>
-          <div className="ml-auto w-full max-w-md min-w-0">
-            <figure className="overflow-hidden rounded-lg bg-card p-1 shadow-2xl ring-2 ring-accent/70 md:p-2 md:ring-4">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
-                <img src={jasonPhoto.url} alt="Coach Jason Silverio" width={1148} height={1370} fetchPriority="high" className="absolute -top-[8%] -left-[20%] h-auto w-[140%] max-w-none" />
+          <div className="ml-auto w-full max-w-md min-w-0 self-stretch pt-7">
+            <figure className="h-full overflow-hidden rounded-lg bg-card p-1 shadow-2xl ring-2 ring-accent/70 md:p-2 md:ring-4">
+              <div className="relative h-full w-full overflow-hidden rounded-sm">
+                <img src={jasonPhoto.url} alt="Coach Jason Silverio" width={1148} height={1370} fetchPriority="high" className="absolute left-1/2 top-0 h-[170%] w-auto max-w-none -translate-x-1/2" />
               </div>
-              <figcaption className="px-1 py-2 text-center text-[0.625rem] font-bold uppercase leading-snug text-primary md:text-xs">PhPA Level 1 Certified Pickleball Coach</figcaption>
             </figure>
           </div>
         </div>
