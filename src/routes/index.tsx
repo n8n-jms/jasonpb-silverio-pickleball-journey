@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import jasonPhoto from "@/assets/jason-transparent.png";
 import journeyBg from "@/assets/journey-bg.jpeg.asset.json";
+import whyTrainBg from "@/assets/why-train-bg.jpeg.asset.json";
 import { BookingForm } from "@/components/BookingForm";
 
 export const Route = createFileRoute("/")({
