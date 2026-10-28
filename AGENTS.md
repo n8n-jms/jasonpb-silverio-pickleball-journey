@@ -9,4 +9,4 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- Frame the coach portrait through proportional CSS sizing and an overflow-hidden viewport, retaining the original asset so presentation changes do not alter the photo.
+- Frame the coach portrait through proportional CSS sizing and an overflow-hidden viewport aligned in the same grid row as the heading and booking button; retain the original asset separately from background-removed derivatives.
