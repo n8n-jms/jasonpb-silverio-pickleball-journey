@@ -28,24 +28,11 @@ jobs:
         with:
           node-version: 24
 
-      - name: Locate and Build Project
-        id: build_step
-        run: |
-          # Find where package.json lives
-          PKG_PATH=$(find . -name "package.json" -not -path "*/node_modules/*" | head -n 1)
-          PROJECT_DIR=$(dirname "$PKG_PATH")
-          echo "Found project directory at: $PROJECT_DIR"
-          
-          # Go to that directory, install, and build
-          cd "$PROJECT_DIR"
-          npm install --no-audit --no-fund
-          npm run build
-          
-          # Find where the compiled dist folder ended up and move it cleanly to a root export folder
-          DIST_PATH=$(find . -name "dist" -type d -not -path "*/node_modules/*" | head -n 1)
-          cd "$GITHUB_WORKSPACE"
-          mkdir -p final_output
-          cp -r "$PROJECT_DIR/$DIST_PATH"/. ./final_output/
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Build Project
+        run: npm run build
         env:
           VITE_DISABLE_LINT: true
           CI: false
@@ -53,7 +40,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: final_output
+          path: .output/public
 
       - name: Deploy to GitHub Pages
         id: deployment
