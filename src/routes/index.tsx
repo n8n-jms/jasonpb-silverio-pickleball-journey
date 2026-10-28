@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import jasonPhoto from "@/assets/jason-transparent.png";
 import journeyBg from "@/assets/journey-bg.jpeg.asset.json";
+import whyTrainBg from "@/assets/why-train-bg.jpeg.asset.json";
 import { BookingForm } from "@/components/BookingForm";
 
 export const Route = createFileRoute("/")({
@@ -76,15 +77,17 @@ function Index() {
         </div>
       </section>
 
-      <section className="bg-secondary py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="font-display text-5xl uppercase">Why Train with <span className="text-primary">Coach Jason</span></h2>
+      <section className="relative overflow-hidden py-20">
+        <img src={whyTrainBg.url} alt="" aria-hidden="true" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-background/85" />
+        <div className="relative mx-auto max-w-6xl px-6">
+          <h2 className="font-display text-5xl uppercase text-navy">Why Train with <span className="text-primary">Coach Jason</span></h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {reasons.map((r, i) => (
-              <div key={r.t} className="rounded-xl bg-card p-6 shadow-sm">
-                <span className="font-display text-4xl text-accent-foreground/20">0{i + 1}</span>
-                <h3 className="mt-2 text-xl font-bold">{r.t}</h3>
-                <p className="mt-2 text-muted-foreground">{r.d}</p>
+              <div key={r.t} className="rounded-xl bg-card/95 p-6 shadow-md ring-1 ring-navy/5">
+                <span className="font-display text-4xl text-primary/25">0{i + 1}</span>
+                <h3 className="mt-2 text-xl font-bold text-navy">{r.t}</h3>
+                <p className="mt-2 text-navy/70">{r.d}</p>
               </div>
             ))}
           </div>
