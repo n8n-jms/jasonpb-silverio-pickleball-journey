@@ -26,7 +26,17 @@ const reasons = [
 ];
 
 const journey = [
-  { y: "The Spark", d: "Discovered pickleball and fell in love with a game that blends strategy, reflexes, and community." },
+  {
+    y: "From Passion to Purpose — Playing, Growing, and Inspiring Others",
+    d: [
+      "Every journey begins with a first step. Mine began with a simple love for sports, a willingness to learn, and a desire to challenge myself. What started as an exciting experience on the pickleball court has grown into something much bigger—a journey of personal growth, meaningful friendships, competition, coaching, community, and faith.",
+      "My pickleball journey is built on passion, continuous learning, faith, and a love for helping others grow. As a PhPA Certified Pickleball Coach, an active tournament player, and a medal-winning competitor, I believe that every player has the potential to improve with the right guidance, consistent practice, and a positive mindset.",
+      "Whether you're picking up a paddle for the first time or looking to sharpen your skills, I'm here to help you build confidence, master the fundamentals, and enjoy every moment on the court.",
+      "For me, coaching is more than teaching techniques. It's about celebrating progress, building friendships, and helping you become a better player, one shot at a time.",
+      "Ready to take your game to the next level? Let's get on the court, work on your goals, and enjoy the journey together!",
+      "By God's grace, let's grow through the game.",
+    ],
+  },
   { y: "Certified", d: "Earned the PhPA Level 1 Pickleball Coach certification to teach the game the right way." },
   { y: "Paddle Circle PH", d: "Coaching with Paddle Circle Philippines — One Game. One Circle. One Purpose." },
   { y: "Today", d: "Helping beginners and developing players improve, compete, and have fun on court." },
@@ -44,17 +54,17 @@ function Index() {
   return (
     <main className="overflow-hidden">
       <section className="bg-hero text-navy-foreground">
-        <div className="mx-auto grid max-w-6xl grid-cols-[auto_minmax(0,1fr)] items-stretch gap-x-3 px-5 py-10 md:gap-x-6 md:px-6 md:py-16">
-          <p className="col-span-2 mb-3 text-xs font-semibold uppercase text-accent md:mb-4 md:text-sm">Paddle Circle Philippines</p>
-          <div className="flex min-w-0 flex-col items-start">
+        <div className="mx-auto grid max-w-6xl grid-cols-[auto_minmax(0,1fr)] items-stretch gap-x-3 px-5 md:gap-x-6 md:px-6">
+          <div className="flex min-w-0 flex-col items-start py-10 md:py-16">
+            <p className="mb-3 text-xs font-semibold uppercase text-accent md:mb-4 md:text-sm">Paddle Circle Philippines</p>
             <h1 className="font-display text-5xl uppercase leading-[0.9] md:text-8xl lg:text-9xl">Coach<br />Jason</h1>
             <p className="skew-tag mt-4 inline-block bg-accent px-2 py-2 text-xs font-bold uppercase text-accent-foreground md:mt-6 md:px-4 md:text-base">Private Pickleball Coaching</p>
             <p className="mt-4 font-script text-lg leading-snug md:mt-6 md:text-3xl">Build your game.<br />Train with confidence.<br />Play better.</p>
             <a href="#contact" className="mt-5 inline-block rounded-full bg-accent px-4 py-3 text-xs font-bold uppercase text-accent-foreground transition hover:scale-105 md:mt-8 md:px-8 md:text-base">Book a Session</a>
           </div>
-          <div className="min-w-0 self-stretch">
-            <figure className="relative h-full w-full overflow-hidden md:max-w-[23rem]">
-                <img src={jasonPhoto} alt="Coach Jason Silverio" width={450} height={1040} fetchPriority="high" className="absolute inset-0 h-full w-full object-cover object-top" />
+          <div className="min-w-0 self-stretch pt-4 md:pt-6">
+            <figure className="relative h-full w-full overflow-hidden md:max-w-[30rem]">
+              <img src={jasonPhoto} alt="Coach Jason Silverio" width={450} height={1040} fetchPriority="high" decoding="async" className="absolute inset-0 h-full w-full object-cover object-top" />
             </figure>
           </div>
         </div>
