@@ -1,5 +1,6 @@
 # Roadmap
 
+- [x] Position the unchanged original photo to the right of the text, slightly zoomed and framed at the waist without stretching
 - [x] Replace site photo with the newly uploaded portrait (IMG_1673.png), cut out from its white background, tuned for phone and computer
 - [x] Use IMG_1670.jpeg as the site photo, unaltered (no edits, no cropping) — shown whole inside a white card on phone and computer
 - [x] Fix his eyes in the photo: the eye on the right of the frame sat narrower/droopier — now even and alert on phone and computer
