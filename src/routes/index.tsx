@@ -114,7 +114,7 @@ function Index() {
       <section id="contact" className="bg-hero py-20 text-navy-foreground">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h2 className="font-script text-5xl">Get in Touch!</h2>
-          <p className="mt-3 text-lg opacity-90">Message Paddle Circle Philippines or reach me directly to book your session.</p>
+          <p className="mt-3 text-lg opacity-90">Reach me directly to book your session.</p>
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
             <a href="https://facebook.com/jason.silverio" target="_blank" rel="noreferrer" className="rounded-xl bg-navy-foreground/10 p-5 hover:bg-navy-foreground/20">Facebook<br /><b>jason.silverio</b></a>
             <a href="mailto:js@jasonsilverio.com" className="rounded-xl bg-navy-foreground/10 p-5 hover:bg-navy-foreground/20">Email<br /><b className="break-all">js@jasonsilverio.com</b></a>
