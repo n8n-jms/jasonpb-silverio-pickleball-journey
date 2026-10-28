@@ -42,7 +42,7 @@ function Index() {
   return (
     <main className="overflow-hidden">
       <section className="bg-hero text-navy-foreground">
-        <div className="mx-auto grid max-w-6xl grid-cols-[1.15fr_0.85fr] items-stretch gap-x-4 px-5 py-10 md:grid-cols-2 md:gap-x-10 md:px-6 md:py-16">
+        <div className="mx-auto grid max-w-6xl grid-cols-[auto_minmax(0,1fr)] items-stretch gap-x-3 px-5 py-10 md:gap-x-6 md:px-6 md:py-16">
           <p className="col-span-2 mb-3 text-xs font-semibold uppercase text-accent md:mb-4 md:text-sm">Paddle Circle Philippines</p>
           <div className="flex min-w-0 flex-col items-start">
             <h1 className="font-display text-5xl uppercase leading-[0.9] md:text-8xl lg:text-9xl">Coach<br />Jason</h1>
@@ -50,9 +50,9 @@ function Index() {
             <p className="mt-4 font-script text-lg leading-snug md:mt-6 md:text-3xl">Build your game.<br />Train with confidence.<br />Play better.</p>
             <a href="#contact" className="mt-5 inline-block rounded-full bg-accent px-4 py-3 text-xs font-bold uppercase text-accent-foreground transition hover:scale-105 md:mt-8 md:px-8 md:text-base">Book a Session</a>
           </div>
-          <div className="ml-auto w-full max-w-md min-w-0 self-stretch">
-            <figure className="relative h-full w-full overflow-hidden">
-                <img src={jasonPhoto} alt="Coach Jason Silverio" width={450} height={1040} fetchPriority="high" className="absolute left-1/2 top-0 h-[130%] w-auto max-w-none -translate-x-1/2" />
+          <div className="min-w-0 self-stretch">
+            <figure className="relative h-full w-full overflow-hidden md:max-w-[23rem]">
+                <img src={jasonPhoto} alt="Coach Jason Silverio" width={450} height={1040} fetchPriority="high" className="absolute inset-0 h-full w-full object-cover object-top" />
             </figure>
           </div>
         </div>
