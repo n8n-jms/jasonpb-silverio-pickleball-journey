@@ -26,7 +26,7 @@ export function BookingForm() {
     e.preventDefault();
     setError(null);
     const parsed = schema.safeParse(Object.fromEntries(new FormData(e.currentTarget)));
-    if (!parsed.success) return setError(parsed.error.issues[0].message);
+    if (!parsed.success) return setError(parsed.error.issues[0]?.message ?? "Please check the form");
     setStatus("sending");
     const { error } = await supabase.from("booking_requests").insert({ ...parsed.data, notes: parsed.data.notes || null });
     if (error) {
