@@ -43,11 +43,11 @@ function Index() {
     <main className="overflow-hidden">
       <section className="bg-hero text-navy-foreground">
         <div className="mx-auto grid max-w-6xl items-center gap-6 px-6 pt-8 md:grid-cols-2 md:gap-8 md:pb-20 md:pt-20">
-          <div className="pb-12 md:pb-0">
+          <div className="flex flex-col items-start pb-12 md:pb-0">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-accent">Paddle Circle Philippines</p>
             <h1 className="mt-3 font-display text-6xl uppercase leading-[0.9] md:mt-4 md:text-9xl">Coach<br />Jason</h1>
             <p className="skew-tag mt-6 inline-block bg-accent px-4 py-2 font-bold uppercase text-accent-foreground">Private Pickleball Coaching</p>
-            <p className="mt-5 font-script text-2xl leading-snug md:mt-6 md:text-3xl">Build your game.<br />Train with confidence.<br />Play better.</p>
+            <p className="mt-6 order-last font-script text-2xl leading-snug md:order-none md:text-3xl">Build your game.<br />Train with confidence.<br />Play better.</p>
             <a href="#contact" className="mt-8 inline-block rounded-full bg-accent px-8 py-3 font-bold uppercase text-accent-foreground transition hover:scale-105">Book a Session</a>
           </div>
           <div className="order-first mx-auto w-full max-w-[15rem] md:order-none md:max-w-lg">
