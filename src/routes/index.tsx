@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import jasonPhoto from "@/assets/jason-transparent.png";
-import journeyBg from "@/assets/journey-bg.jpeg.asset.json";
+import journeyBg1 from "@/assets/journey-IMG_1602-2.jpeg.asset.json";
+import journeyBg2 from "@/assets/journey-IMG_1600.jpeg.asset.json";
+import journeyBg3 from "@/assets/journey-IMG_1604.jpeg.asset.json";
 import whyTrainBg from "@/assets/why-train-bg.jpeg.asset.json";
 import { BookingForm } from "@/components/BookingForm";
 
@@ -71,7 +73,7 @@ function Index() {
       </section>
 
       <section className="relative overflow-hidden py-20">
-        <img src={journeyBg.url} alt="" aria-hidden="true" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+        <div aria-hidden="true" className="absolute inset-0 flex flex-col">{[journeyBg1, journeyBg2, journeyBg3].map((b) => (<img key={b.url} src={b.url} alt="" loading="lazy" className="min-h-0 w-full flex-1 object-cover" />))}</div>
         <div className="absolute inset-0 bg-background/80" />
         <div className="relative mx-auto max-w-4xl px-6">
           <h2 className="font-display text-5xl uppercase text-navy">My Coaching Journey</h2>
