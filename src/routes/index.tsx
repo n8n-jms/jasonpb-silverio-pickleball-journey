@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import jason from "@/assets/jason.png";
+import { BookingForm } from "@/components/BookingForm";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -95,6 +96,14 @@ function Index() {
               <li key={d} className="flex gap-3 text-lg"><span className="mt-1 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-primary text-sm text-primary-foreground">✓</span>{d}</li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      <section id="book" className="bg-secondary py-20">
+        <div className="mx-auto max-w-3xl px-6">
+          <h2 className="text-center font-display text-4xl uppercase">Book a Session</h2>
+          <p className="mt-3 mb-10 text-center text-lg">Pick a time that works for you and I'll confirm by text or email.</p>
+          <BookingForm />
         </div>
       </section>
 
