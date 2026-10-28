@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import jasonPhoto from "@/assets/jason-transparent.png";
+import journeyBg from "@/assets/journey-bg.jpeg.asset.json";
 import { BookingForm } from "@/components/BookingForm";
 
 export const Route = createFileRoute("/")({
@@ -58,17 +59,21 @@ function Index() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-4xl px-6 py-20">
-        <h2 className="font-display text-5xl uppercase text-primary">My Coaching Journey</h2>
-        <ol className="mt-10 space-y-8 border-l-4 border-accent pl-8">
-          {journey.map((j) => (
-            <li key={j.y} className="relative">
-              <span className="absolute -left-[2.6rem] top-1 h-5 w-5 rounded-full border-4 border-background bg-primary" />
-              <h3 className="font-display text-2xl uppercase">{j.y}</h3>
-              <p className="mt-1 text-lg text-muted-foreground">{j.d}</p>
-            </li>
-          ))}
-        </ol>
+      <section className="relative overflow-hidden py-20">
+        <img src={journeyBg.url} alt="" aria-hidden="true" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-background/80" />
+        <div className="relative mx-auto max-w-4xl px-6">
+          <h2 className="font-display text-5xl uppercase text-navy">My Coaching Journey</h2>
+          <ol className="mt-10 space-y-8 border-l-4 border-accent pl-8">
+            {journey.map((j) => (
+              <li key={j.y} className="relative">
+                <span className="absolute -left-[2.6rem] top-1 h-5 w-5 rounded-full border-4 border-background bg-primary" />
+                <h3 className="font-display text-2xl uppercase text-primary">{j.y}</h3>
+                <p className="mt-1 text-lg font-medium text-navy/85">{j.d}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
       </section>
 
       <section className="bg-secondary py-20">
