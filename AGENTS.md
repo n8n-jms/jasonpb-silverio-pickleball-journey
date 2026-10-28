@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Frame the coach portrait through proportional CSS sizing and an overflow-hidden viewport, retaining the original asset so presentation changes do not alter the photo.
