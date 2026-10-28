@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import jasonPhoto from "@/assets/jason-transparent.png";
-import journeyBg from "@/assets/journey-bg.jpeg.asset.json";
+import journeyBg1 from "@/assets/journey-IMG_1602-2.jpeg.asset.json";
+import journeyBg2 from "@/assets/journey-IMG_1600.jpeg.asset.json";
+import journeyBg3 from "@/assets/journey-IMG_1604.jpeg.asset.json";
 import whyTrainBg from "@/assets/why-train-bg.jpeg.asset.json";
 import { BookingForm } from "@/components/BookingForm";
 
@@ -71,8 +73,8 @@ function Index() {
       </section>
 
       <section className="relative overflow-hidden py-20">
-        <img src={journeyBg.url} alt="" aria-hidden="true" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-background/80" />
+        <div aria-hidden="true" className="absolute inset-0 flex flex-col">{[journeyBg1, journeyBg2, journeyBg3].map((b) => (<img key={b.url} src={b.url} alt="" loading="lazy" className="min-h-0 w-full flex-1 object-cover" />))}</div>
+        <div className="absolute inset-0 bg-background/85" />
         <div className="relative mx-auto max-w-4xl px-6">
           <h2 className="font-display text-5xl uppercase text-navy">My Coaching Journey</h2>
           <ol className="mt-10 space-y-8 border-l-4 border-accent pl-8">
@@ -80,7 +82,9 @@ function Index() {
               <li key={j.y} className="relative">
                 <span className="absolute -left-[2.6rem] top-1 h-5 w-5 rounded-full border-4 border-background bg-primary" />
                 <h3 className="font-display text-2xl uppercase text-primary">{j.y}</h3>
-                <p className="mt-1 text-lg font-medium text-navy/85">{j.d}</p>
+                {(Array.isArray(j.d) ? j.d : [j.d]).map((para, k, arr) => (
+                  <p key={k} className={arr.length > 1 && k === arr.length - 1 ? "mt-4 font-script text-2xl text-primary" : k === 0 ? "mt-1 text-lg font-semibold text-navy" : "mt-3 text-lg font-medium text-navy/90"}>{para}</p>
+                ))}
               </li>
             ))}
           </ol>
