@@ -82,7 +82,9 @@ function Index() {
               <li key={j.y} className="relative">
                 <span className="absolute -left-[2.6rem] top-1 h-5 w-5 rounded-full border-4 border-background bg-primary" />
                 <h3 className="font-display text-2xl uppercase text-primary">{j.y}</h3>
-                <p className="mt-1 text-lg font-medium text-navy/85">{j.d}</p>
+                {(Array.isArray(j.d) ? j.d : [j.d]).map((para, k, arr) => (
+                  <p key={k} className={arr.length > 1 && k === arr.length - 1 ? "mt-4 font-script text-2xl text-primary" : k === 0 ? "mt-1 text-lg font-semibold text-navy" : "mt-3 text-lg font-medium text-navy/90"}>{para}</p>
+                ))}
               </li>
             ))}
           </ol>
