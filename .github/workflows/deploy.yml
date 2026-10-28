@@ -32,16 +32,18 @@ jobs:
         run: npm install --no-audit --no-fund
 
       - name: Build
-        run: npm run build
+        run: |
+          npm run build
         env:
           VITE_DISABLE_LINT: true
           CI: false
 
-      - name: Upload artifact
+      - name: Auto-Detect and Upload Build Folder
         uses: actions/upload-pages-artifact@v3
         with:
-         path: build
-
+          path: |
+            **/dist
+            dist
 
       - name: Deploy to GitHub Pages
         id: deployment
