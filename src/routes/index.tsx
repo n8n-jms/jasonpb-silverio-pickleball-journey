@@ -68,7 +68,7 @@ function Index() {
             {journey.map((j) => (
               <li key={j.y} className="relative">
                 <span className="absolute -left-[2.6rem] top-1 h-5 w-5 rounded-full border-4 border-background bg-primary" />
-                <h3 className="font-display text-2xl uppercase text-navy">{j.y}</h3>
+                <h3 className="font-display text-2xl uppercase text-primary">{j.y}</h3>
                 <p className="mt-1 text-lg font-medium text-navy/85">{j.d}</p>
               </li>
             ))}
