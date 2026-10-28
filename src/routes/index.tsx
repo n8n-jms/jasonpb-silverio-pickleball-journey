@@ -51,7 +51,7 @@ function Index() {
             <a href="#contact" className="mt-5 inline-block rounded-full bg-accent px-4 py-3 text-xs font-bold uppercase text-accent-foreground transition hover:scale-105 md:mt-8 md:px-8 md:text-base">Book a Session</a>
           </div>
           <div className="min-w-0 self-stretch">
-            <figure className="relative h-full w-full max-w-[11.75rem] overflow-hidden md:max-w-[21.5rem]">
+            <figure className="relative h-full w-full overflow-hidden md:max-w-[23rem]">
                 <img src={jasonPhoto} alt="Coach Jason Silverio" width={450} height={1040} fetchPriority="high" className="absolute inset-0 h-full w-full object-cover object-top" />
             </figure>
           </div>
