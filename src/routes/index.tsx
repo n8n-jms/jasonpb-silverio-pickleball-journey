@@ -42,18 +42,18 @@ function Index() {
   return (
     <main className="overflow-hidden">
       <section className="bg-hero text-navy-foreground">
-        <div className="mx-auto grid max-w-6xl items-center gap-8 px-6 pt-12 md:grid-cols-2 md:pb-20 md:pt-20">
+        <div className="mx-auto grid max-w-6xl items-center gap-6 px-6 pt-8 md:grid-cols-2 md:gap-8 md:pb-20 md:pt-20">
           <div className="pb-12 md:pb-0">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-accent">Paddle Circle Philippines</p>
-            <h1 className="mt-4 font-display text-7xl uppercase leading-[0.9] md:text-9xl">Coach<br />Jason</h1>
+            <h1 className="mt-3 font-display text-6xl uppercase leading-[0.9] md:mt-4 md:text-9xl">Coach<br />Jason</h1>
             <p className="skew-tag mt-6 inline-block bg-accent px-4 py-2 font-bold uppercase text-accent-foreground">Private Pickleball Coaching</p>
-            <p className="mt-6 font-script text-3xl leading-snug">Build your game.<br />Train with confidence.<br />Play better.</p>
+            <p className="mt-5 font-script text-2xl leading-snug md:mt-6 md:text-3xl">Build your game.<br />Train with confidence.<br />Play better.</p>
             <a href="#contact" className="mt-8 inline-block rounded-full bg-accent px-8 py-3 font-bold uppercase text-accent-foreground transition hover:scale-105">Book a Session</a>
           </div>
-          <div className="order-first mx-auto w-full max-w-xs md:order-none md:max-w-md">
-            <figure className="rounded-[2rem] bg-white p-4 shadow-2xl ring-4 ring-accent/70">
+          <div className="order-first mx-auto w-full max-w-[15rem] md:order-none md:max-w-lg">
+            <figure className="rounded-[1.75rem] bg-white p-2 shadow-2xl ring-4 ring-accent/70">
               <img src={jasonPhoto.url} alt="Coach Jason Silverio" className="w-full rounded-[1.4rem]" />
-              <figcaption className="pt-3 text-center text-xs font-bold uppercase tracking-[0.18em] text-primary">PhPA Level 1 Certified Pickleball Coach</figcaption>
+              <figcaption className="py-2 text-center text-[0.65rem] font-bold uppercase tracking-[0.18em] text-primary md:text-xs">PhPA Level 1 Certified Pickleball Coach</figcaption>
             </figure>
           </div>
         </div>
