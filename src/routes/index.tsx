@@ -42,18 +42,18 @@ function Index() {
   return (
     <main className="overflow-hidden">
       <section className="bg-hero text-navy-foreground">
-        <div className="mx-auto grid max-w-6xl items-center gap-5 px-6 pt-6 md:grid-cols-2 md:gap-8 md:pb-20 md:pt-20">
-          <div className="flex flex-col items-start pb-12 md:pb-0">
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-accent">Paddle Circle Philippines</p>
-            <h1 className="mt-3 font-display text-5xl uppercase leading-[0.9] md:mt-4 md:text-9xl">Coach<br />Jason</h1>
-            <p className="skew-tag mt-4 inline-block bg-accent px-4 py-2 font-bold uppercase text-accent-foreground md:mt-6">Private Pickleball Coaching</p>
-            <p className="mt-4 font-script text-xl leading-snug md:mt-6 md:text-3xl">Build your game.<br />Train with confidence.<br />Play better.</p>
-            <a href="#contact" className="mt-5 inline-block rounded-full bg-accent px-8 py-3 font-bold uppercase text-accent-foreground transition hover:scale-105 md:mt-8">Book a Session</a>
+        <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_10rem] items-center gap-4 px-6 pt-6 md:grid-cols-2 md:gap-8 md:pb-20 md:pt-20">
+          <div className="flex flex-col items-start pb-6 md:pb-0">
+            <p className="text-[0.6rem] font-semibold uppercase tracking-[0.22em] text-accent md:text-sm md:tracking-[0.3em]">Paddle Circle Philippines</p>
+            <h1 className="mt-2 font-display text-4xl uppercase leading-[0.9] md:mt-4 md:text-9xl">Coach<br />Jason</h1>
+            <p className="skew-tag mt-3 inline-block bg-accent px-3 py-1.5 text-[0.6rem] font-bold uppercase text-accent-foreground md:mt-6 md:px-4 md:py-2 md:text-base">Private Pickleball Coaching</p>
+            <p className="mt-3 font-script text-lg leading-snug md:mt-6 md:text-3xl">Build your game.<br />Train with confidence.<br />Play better.</p>
+            <a href="#book" className="mt-4 inline-block rounded-full bg-accent px-5 py-2.5 text-sm font-bold uppercase text-accent-foreground transition hover:scale-105 md:mt-8 md:px-8 md:py-3 md:text-base">Book a Session</a>
           </div>
-          <div className="order-first mx-auto w-full max-w-[13rem] md:order-none md:max-w-lg">
-            <figure className="rounded-[1.75rem] bg-white p-2 shadow-2xl ring-4 ring-accent/70">
-              <img src={jasonPhoto.url} alt="Coach Jason Silverio" className="w-full rounded-[1.4rem]" />
-              <figcaption className="py-2 text-center text-[0.65rem] font-bold uppercase tracking-[0.18em] text-primary md:text-xs">PhPA Level 1 Certified Pickleball Coach</figcaption>
+          <div className="mx-auto w-full self-center md:max-w-lg">
+            <figure className="rounded-[1.25rem] bg-white p-1.5 shadow-2xl ring-2 ring-accent/70 md:rounded-[1.75rem] md:p-2 md:ring-4">
+              <img src={jasonPhoto.url} alt="Coach Jason Silverio" className="w-full rounded-[1rem]" />
+              <figcaption className="py-1.5 text-center text-[0.5rem] font-bold uppercase leading-tight tracking-[0.12em] text-primary md:py-2 md:text-[0.65rem] md:tracking-[0.18em]">PhPA Level 1 Certified Pickleball Coach</figcaption>
             </figure>
           </div>
         </div>
