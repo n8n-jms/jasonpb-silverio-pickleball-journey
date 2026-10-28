@@ -52,7 +52,7 @@ function Index() {
           </div>
           <div className="ml-auto w-full max-w-md min-w-0 self-stretch">
             <figure className="relative h-full w-full overflow-hidden">
-                <img src={jasonPhoto} alt="Coach Jason Silverio" width={450} height={1040} fetchPriority="high" className="absolute left-1/2 top-0 h-[145%] w-auto max-w-none -translate-x-1/2" />
+                <img src={jasonPhoto} alt="Coach Jason Silverio" width={450} height={1040} fetchPriority="high" className="absolute left-1/2 top-0 h-[130%] w-auto max-w-none -translate-x-1/2" />
             </figure>
           </div>
         </div>

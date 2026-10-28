@@ -1,6 +1,6 @@
 # Roadmap
 
-- [ ] Remove the portrait's white background and fit it from Coach Jason to Book a Session without stretching
+- [x] Remove the portrait's white background and fit it from Coach Jason to Book a Session without stretching
 
 - [x] Position the unchanged original photo to the right of the text, slightly zoomed and framed at the waist without stretching
 - [x] Replace site photo with the newly uploaded portrait (IMG_1673.png), cut out from its white background, tuned for phone and computer
