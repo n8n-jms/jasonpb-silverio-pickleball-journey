@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import jason from "@/assets/jason.png";
+import jason from "@/assets/jason-cutout.png";
 import { BookingForm } from "@/components/BookingForm";
 
 export const Route = createFileRoute("/")({
@@ -50,7 +50,7 @@ function Index() {
             <p className="mt-6 font-script text-3xl leading-snug">Build your game.<br />Train with confidence.<br />Play better.</p>
             <a href="#contact" className="mt-8 inline-block rounded-full bg-accent px-8 py-3 font-bold uppercase text-accent-foreground transition hover:scale-105">Book a Session</a>
           </div>
-          <img src={jason} alt="Coach Jason Silverio" className="mx-auto w-full max-w-md" />
+          <img src={jason} alt="Coach Jason Silverio" className="mx-auto w-full max-w-md drop-shadow-2xl" />
         </div>
       </section>
 
