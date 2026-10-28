@@ -3,6 +3,8 @@ import jasonPhoto from "@/assets/jason-transparent.png";
 import journeyBg1 from "@/assets/journey-IMG_1602-2.jpeg.asset.json";
 import journeyBg2 from "@/assets/journey-IMG_1600.jpeg.asset.json";
 import journeyBg3 from "@/assets/journey-IMG_1604.jpeg.asset.json";
+import logo from "@/assets/paddle-circle-logo.jpeg.asset.json";
+import sessionBg from "@/assets/session-details-bg.jpeg.asset.json";
 import whyTrainBg from "@/assets/why-train-bg.jpeg.asset.json";
 import { BookingForm } from "@/components/BookingForm";
 
@@ -58,7 +60,9 @@ function Index() {
       <section className="bg-hero text-navy-foreground">
         <div className="mx-auto grid max-w-6xl grid-cols-[auto_minmax(0,1fr)] items-stretch gap-x-3 px-5 md:gap-x-6 md:px-6">
           <div className="flex min-w-0 flex-col items-start py-10 md:py-16">
-            <p className="mb-3 text-xs font-semibold uppercase text-accent md:mb-4 md:text-sm">Paddle Circle Philippines</p>
+            <div className="mb-3 inline-flex items-center rounded-lg bg-background px-3 py-2 shadow-sm md:mb-4 md:px-4 md:py-3">
+              <img src={logo.url} alt="Paddle Circle Philippines" width={676} height={167} decoding="async" className="h-8 w-auto md:h-12" />
+            </div>
             <h1 className="font-display text-5xl uppercase leading-[0.9] md:text-8xl lg:text-9xl">Coach<br />Jason</h1>
             <p className="skew-tag mt-4 inline-block bg-accent px-2 py-2 text-xs font-bold uppercase text-accent-foreground md:mt-6 md:px-4 md:text-base">Private Pickleball Coaching</p>
             <p className="mt-4 font-script text-lg leading-snug md:mt-6 md:text-3xl">Build your game.<br />Train with confidence.<br />Play better.</p>
@@ -108,20 +112,24 @@ function Index() {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-6xl gap-10 px-6 py-20 md:grid-cols-2">
-        <div className="rounded-2xl bg-navy p-10 text-navy-foreground">
-          <p className="font-bold uppercase tracking-widest text-accent">Rate</p>
-          <p className="mt-2 font-display text-8xl">₱400<span className="font-script text-3xl"> per hour</span></p>
-          <p className="mt-4 text-lg">Minimum of 2 hours</p>
-          <p className="skew-tag mt-4 inline-block bg-accent px-4 py-2 font-bold text-accent-foreground">Starting at ₱800 per session</p>
-        </div>
-        <div>
-          <h2 className="font-display text-4xl uppercase">Session Details</h2>
-          <ul className="mt-6 space-y-4">
-            {details.map((d) => (
-              <li key={d} className="flex gap-3 text-lg"><span className="mt-1 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-primary text-sm text-primary-foreground">✓</span>{d}</li>
-            ))}
-          </ul>
+      <section className="relative overflow-hidden py-20">
+        <img src={sessionBg.url} alt="" aria-hidden="true" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-background/85" />
+        <div className="relative mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-2">
+          <div className="rounded-2xl bg-navy p-10 text-navy-foreground">
+            <p className="font-bold uppercase tracking-widest text-accent">Rate</p>
+            <p className="mt-2 font-display text-8xl">₱400<span className="font-script text-3xl"> per hour</span></p>
+            <p className="mt-4 text-lg">Minimum of 2 hours</p>
+            <p className="skew-tag mt-4 inline-block bg-accent px-4 py-2 font-bold text-accent-foreground">Starting at ₱800 per session</p>
+          </div>
+          <div>
+            <h2 className="font-display text-4xl uppercase text-navy">Session Details</h2>
+            <ul className="mt-6 space-y-4">
+              {details.map((d) => (
+                <li key={d} className="flex gap-3 text-lg font-medium text-navy"><span className="mt-1 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-primary text-sm text-primary-foreground">✓</span>{d}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
