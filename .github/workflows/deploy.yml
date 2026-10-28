@@ -19,6 +19,10 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        # This tells GitHub to run all commands inside your actual app folder!
+        working-directory: ./jasonpb-silverio-pickleball-journey
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -37,24 +41,10 @@ jobs:
           VITE_DISABLE_LINT: true
           CI: false
 
-      - name: Verify Build Output
-        run: |
-          if [ -d "dist" ]; then
-            echo "Found dist folder in root."
-          else
-            echo "Looking for hidden dist folders..."
-            find . -name "dist" -type d
-            # If dist is found nested inside an app directory, copy it to root
-            NESTED_DIST=$(find . -name "dist" -type d | head -n 1)
-            if [ ! -z "$NESTED_DIST" ] && [ "$NESTED_DIST" != "./dist" ]; then
-              cp -r $NESTED_DIST ./dist
-            fi
-          fi
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: ./jasonpb-silverio-pickleball-journey/dist
 
       - name: Deploy to GitHub Pages
         id: deployment
