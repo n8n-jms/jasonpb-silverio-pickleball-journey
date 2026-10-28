@@ -74,7 +74,7 @@ function Index() {
 
       <section className="relative overflow-hidden py-20">
         <div aria-hidden="true" className="absolute inset-0 flex flex-col">{[journeyBg1, journeyBg2, journeyBg3].map((b) => (<img key={b.url} src={b.url} alt="" loading="lazy" className="min-h-0 w-full flex-1 object-cover" />))}</div>
-        <div className="absolute inset-0 bg-background/80" />
+        <div className="absolute inset-0 bg-background/85" />
         <div className="relative mx-auto max-w-4xl px-6">
           <h2 className="font-display text-5xl uppercase text-navy">My Coaching Journey</h2>
           <ol className="mt-10 space-y-8 border-l-4 border-accent pl-8">
