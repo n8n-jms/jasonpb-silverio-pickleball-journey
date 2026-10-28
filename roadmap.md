@@ -9,7 +9,7 @@
 - [x] Remove the "Message Paddle Circle Philippines" line from Get in Touch
 - [x] Use uploaded IMG_1602 photo as a lighter My Coaching Journey background with readable text
 - [x] Use uploaded IMG_3604 photo as a lighter "Why Train with Coach Jason" background with readable text
-- [ ] Decide what to do with the wide empty blue area to the right of the photo on computer screens (photo now sits right beside the text with no gap)
+- [x] Photo now runs the full banner height on phone and computer
 - [ ] Confirm real coaching hours for the booking time slots (currently 6, 8, 10 AM and 2, 4, 6, 8 PM)
-- [ ] Replace the written journey story with his real milestones when he sends them
+- [x] First journey step replaced with his "From Passion to Purpose" story
 - [ ] Optional: send booking requests to js@jasonsilverio.com by email (needs email sending turned on)
