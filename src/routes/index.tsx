@@ -4,7 +4,7 @@ import { BookingForm } from "@/components/BookingForm";
 
 const jasonPhoto = "/jason-transparent.png";
 const journeyPhotos = ["/IMG_1602-3.jpeg", "/1787543392596.jpeg", "/IMG_1601.jpeg"];
-const logo = "/paddle-circle-logo.jpeg";
+const logo = "/paddle-circle-logo-2.jpeg";
 const sessionBg = "/IMG_1956-2.jpeg";
 const whyTrainBg = "/IMG_3604-2.jpeg";
 
@@ -52,6 +52,7 @@ const details = [
   "Court rental not included",
   "Coach can assist in finding available pro courts",
   "Schedule subject to coach and court availability",
+  "Monday–Sunday · 6:00 AM–10:00 PM (Manila time)",
 ];
 
 function Index() {
@@ -61,7 +62,7 @@ function Index() {
         <div className="mx-auto grid max-w-6xl grid-cols-[auto_minmax(0,1fr)] items-stretch gap-x-3 px-5 md:gap-x-6 md:px-6">
           <div className="flex min-w-0 flex-col items-start py-10 md:py-16">
             <div className="mb-3 inline-flex items-center rounded-lg bg-background px-3 py-2 shadow-sm md:mb-4 md:px-4 md:py-3">
-              <img src={logo} alt="Paddle Circle Philippines" width={1920} height={733} decoding="async" className="h-auto w-36 max-w-full md:w-72" />
+              <img src={logo} alt="Paddle Circle Philippines" width={1070} height={312} decoding="async" className="h-auto w-36 max-w-full object-contain md:w-72" />
             </div>
             <h1 className="font-display text-5xl uppercase leading-[0.9] md:text-8xl lg:text-9xl">Coach<br />Jason</h1>
             <p className="skew-tag mt-4 inline-block bg-accent px-2 py-2 text-xs font-bold uppercase text-accent-foreground md:mt-6 md:px-4 md:text-base">Private Pickleball Coaching</p>

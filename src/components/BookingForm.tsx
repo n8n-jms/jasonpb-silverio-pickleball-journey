@@ -2,8 +2,7 @@ import { useState } from "react";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
-
-const TIMES = ["6:00 AM", "8:00 AM", "10:00 AM", "2:00 PM", "4:00 PM", "6:00 PM", "8:00 PM"];
+import { availableStartTimes, isValidSessionTime } from "@/lib/coaching-schedule";
 
 const schema = z.object({
   name: z.string().trim().min(1, "Please enter your name").max(100),
@@ -14,6 +13,9 @@ const schema = z.object({
   session_type: z.enum(["1-on-1", "Small group"]),
   hours: z.coerce.number().int().min(2).max(6),
   notes: z.string().trim().max(1000).optional(),
+}).refine((data) => isValidSessionTime(data.preferred_time, data.hours), {
+  message: "Please choose a session that finishes by 10:00 PM.",
+  path: ["preferred_time"],
 });
 
 const field = "w-full rounded-lg border border-input bg-background px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-ring";
@@ -21,6 +23,9 @@ const field = "w-full rounded-lg border border-input bg-background px-4 py-3 tex
 export function BookingForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "done">("idle");
   const [error, setError] = useState<string | null>(null);
+  const [hours, setHours] = useState(2);
+  const [preferredTime, setPreferredTime] = useState("");
+  const times = availableStartTimes(hours);
   const today = new Date().toISOString().slice(0, 10);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -55,9 +60,9 @@ export function BookingForm() {
       <label className="grid gap-1 font-semibold sm:col-span-2">Email<input name="email" type="email" maxLength={255} required className={field} /></label>
       <label className="grid gap-1 font-semibold">Preferred date<input name="preferred_date" type="date" min={today} required className={field} /></label>
       <label className="grid gap-1 font-semibold">Preferred time
-        <select name="preferred_time" required defaultValue="" className={field}>
+        <select name="preferred_time" required value={preferredTime} onChange={(e) => setPreferredTime(e.target.value)} className={field}>
           <option value="" disabled>Choose a time</option>
-          {TIMES.map((t) => <option key={t}>{t}</option>)}
+          {times.map((t) => <option key={t}>{t}</option>)}
         </select>
       </label>
       <label className="grid gap-1 font-semibold">Session type
@@ -67,7 +72,11 @@ export function BookingForm() {
         </select>
       </label>
       <label className="grid gap-1 font-semibold">Hours
-        <select name="hours" defaultValue="2" className={field}>
+        <select name="hours" value={hours} onChange={(e) => {
+          const nextHours = Number(e.target.value);
+          setHours(nextHours);
+          if (!isValidSessionTime(preferredTime, nextHours)) setPreferredTime("");
+        }} className={field}>
           {[2, 3, 4, 5, 6].map((h) => <option key={h} value={h}>{h} hours (₱{h * 400})</option>)}
         </select>
       </label>
