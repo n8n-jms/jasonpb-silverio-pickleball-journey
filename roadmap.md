@@ -1,7 +1,7 @@
 # Roadmap
 
-- [ ] Replace the top logo with the latest upload and check its proportions at all three screen sizes
-- [ ] Apply confirmed daily coaching hours and keep requested sessions within closing time
+- [x] Replace the top logo with the latest upload and check its proportions at all three screen sizes
+- [x] Apply confirmed daily coaching hours and keep requested sessions within closing time
 
 - [x] Replace six uploaded photos, use public root-relative paths, and verify phone, tablet, and computer layouts
 - [x] Change contact email to silverio.jason@gmail.com and verify booking submissions
