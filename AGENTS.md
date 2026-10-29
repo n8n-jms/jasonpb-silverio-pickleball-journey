@@ -10,3 +10,5 @@
 <!-- LOVABLE:END -->
 
 - Frame the coach portrait through proportional CSS sizing and an overflow-hidden viewport aligned in the same grid row as the heading and booking button; retain the original asset separately from background-removed derivatives.
+- Keep the contact address in one browser-safe contact module so contact links share the same value.
+- Use fixed equal grid tracks with absolutely positioned object-cover images for stacked section backdrops so intrinsic image sizes cannot overflow or distort the section.
