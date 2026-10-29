@@ -12,4 +12,7 @@
 - [x] Photo now runs the full banner height on phone and computer
 - [ ] Confirm real coaching hours for the booking time slots (currently 6, 8, 10 AM and 2, 4, 6, 8 PM)
 - [x] First journey step replaced with his "From Passion to Purpose" story
+- [x] Replace the yellow "Paddle Circle Philippines" label at the top with the uploaded logo, sharp and undistorted
+- [x] Use uploaded IMG_1956 court photo as the lighter Session Details backdrop with readable text
+- [x] Set the browser tab icon from the logo's round mark
 - [ ] Optional: send booking requests to js@jasonsilverio.com by email (needs email sending turned on)
