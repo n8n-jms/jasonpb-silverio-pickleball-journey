@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
+import { Button } from "@/components/ui/button";
 
 const TIMES = ["6:00 AM", "8:00 AM", "10:00 AM", "2:00 PM", "4:00 PM", "6:00 PM", "8:00 PM"];
 
@@ -28,12 +29,14 @@ export function BookingForm() {
     const parsed = schema.safeParse(Object.fromEntries(new FormData(e.currentTarget)));
     if (!parsed.success) return setError(parsed.error.issues[0]?.message ?? "Please check the form");
     setStatus("sending");
-    const { error } = await supabase.from("booking_requests").insert({ ...parsed.data, notes: parsed.data.notes || null });
-    if (error) {
+    try {
+      const { error } = await supabase.from("booking_requests").insert({ ...parsed.data, notes: parsed.data.notes || null });
+      if (error) throw error;
+      setStatus("done");
+    } catch {
       setStatus("idle");
       return setError("Something went wrong. Please try again or contact me directly.");
     }
-    setStatus("done");
   }
 
   if (status === "done") {
@@ -72,9 +75,9 @@ export function BookingForm() {
         <textarea name="notes" rows={3} maxLength={1000} className={field} />
       </label>
       {error && <p className="text-destructive sm:col-span-2">{error}</p>}
-      <button disabled={status === "sending"} className="rounded-lg bg-accent px-6 py-4 font-display text-xl uppercase text-accent-foreground hover:opacity-90 disabled:opacity-60 sm:col-span-2">
+      <Button type="submit" disabled={status === "sending"} className="h-auto rounded-lg bg-accent px-6 py-4 font-display text-xl uppercase text-accent-foreground hover:bg-accent/90 disabled:opacity-60 sm:col-span-2">
         {status === "sending" ? "Sending…" : "Request Booking"}
-      </button>
+      </Button>
       <p className="text-sm text-muted-foreground sm:col-span-2">Schedule subject to coach and court availability. Court rental not included.</p>
     </form>
   );

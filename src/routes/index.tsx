@@ -1,12 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import jasonPhoto from "@/assets/jason-transparent.png";
-import journeyBg1 from "@/assets/journey-IMG_1602-2.jpeg.asset.json";
-import journeyBg2 from "@/assets/journey-IMG_1600.jpeg.asset.json";
-import journeyBg3 from "@/assets/journey-IMG_1604.jpeg.asset.json";
-import logo from "@/assets/paddle-circle-logo.jpeg.asset.json";
-import sessionBg from "@/assets/session-details-bg.jpeg.asset.json";
-import whyTrainBg from "@/assets/why-train-bg.jpeg.asset.json";
+import { CONTACT_EMAIL } from "@/lib/contact";
 import { BookingForm } from "@/components/BookingForm";
+
+const jasonPhoto = "/jason-transparent.png";
+const journeyPhotos = ["/IMG_1602-3.jpeg", "/1787543392596.jpeg", "/IMG_1601.jpeg"];
+const logo = "/paddle-circle-logo.jpeg";
+const sessionBg = "/IMG_1956-2.jpeg";
+const whyTrainBg = "/IMG_3604-2.jpeg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -61,7 +61,7 @@ function Index() {
         <div className="mx-auto grid max-w-6xl grid-cols-[auto_minmax(0,1fr)] items-stretch gap-x-3 px-5 md:gap-x-6 md:px-6">
           <div className="flex min-w-0 flex-col items-start py-10 md:py-16">
             <div className="mb-3 inline-flex items-center rounded-lg bg-background px-3 py-2 shadow-sm md:mb-4 md:px-4 md:py-3">
-              <img src={logo.url} alt="Paddle Circle Philippines" width={676} height={167} decoding="async" className="h-8 w-auto md:h-12" />
+              <img src={logo} alt="Paddle Circle Philippines" width={1920} height={733} decoding="async" className="h-auto w-36 max-w-full md:w-72" />
             </div>
             <h1 className="font-display text-5xl uppercase leading-[0.9] md:text-8xl lg:text-9xl">Coach<br />Jason</h1>
             <p className="skew-tag mt-4 inline-block bg-accent px-2 py-2 text-xs font-bold uppercase text-accent-foreground md:mt-6 md:px-4 md:text-base">Private Pickleball Coaching</p>
@@ -77,7 +77,7 @@ function Index() {
       </section>
 
       <section className="relative overflow-hidden py-20">
-        <div aria-hidden="true" className="absolute inset-0 flex flex-col">{[journeyBg1, journeyBg2, journeyBg3].map((b) => (<img key={b.url} src={b.url} alt="" loading="lazy" className="min-h-0 w-full flex-1 object-cover" />))}</div>
+        <div aria-hidden="true" className="absolute inset-0 grid grid-rows-3">{journeyPhotos.map((photo) => (<div key={photo} className="relative min-h-0 overflow-hidden"><img src={photo} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover object-center" /></div>))}</div>
         <div className="absolute inset-0 bg-background/85" />
         <div className="relative mx-auto max-w-4xl px-6">
           <h2 className="font-display text-5xl uppercase text-navy">My Coaching Journey</h2>
@@ -96,7 +96,7 @@ function Index() {
       </section>
 
       <section className="relative overflow-hidden py-20">
-        <img src={whyTrainBg.url} alt="" aria-hidden="true" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+        <img src={whyTrainBg} alt="" aria-hidden="true" loading="lazy" className="absolute inset-0 h-full w-full object-cover object-center" />
         <div className="absolute inset-0 bg-background/85" />
         <div className="relative mx-auto max-w-6xl px-6">
           <h2 className="font-display text-5xl uppercase text-navy">Why Train with <span className="text-primary">Coach Jason</span></h2>
@@ -113,7 +113,7 @@ function Index() {
       </section>
 
       <section className="relative overflow-hidden py-20">
-        <img src={sessionBg.url} alt="" aria-hidden="true" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+        <img src={sessionBg} alt="" aria-hidden="true" loading="lazy" className="absolute inset-0 h-full w-full object-cover object-center" />
         <div className="absolute inset-0 bg-background/85" />
         <div className="relative mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-2">
           <div className="rounded-2xl bg-navy p-10 text-navy-foreground">
@@ -147,7 +147,7 @@ function Index() {
           <p className="mt-3 text-lg opacity-90">Reach me directly to book your session.</p>
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
             <a href="https://facebook.com/jason.silverio" target="_blank" rel="noreferrer" className="rounded-xl bg-navy-foreground/10 p-5 hover:bg-navy-foreground/20">Facebook<br /><b>jason.silverio</b></a>
-            <a href="mailto:js@jasonsilverio.com" className="rounded-xl bg-navy-foreground/10 p-5 hover:bg-navy-foreground/20">Email<br /><b className="break-all">js@jasonsilverio.com</b></a>
+            <a href={`mailto:${CONTACT_EMAIL}`} className="rounded-xl bg-navy-foreground/10 p-5 hover:bg-navy-foreground/20">Email<br /><b className="break-all">{CONTACT_EMAIL}</b></a>
             <a href="tel:09951480924" className="rounded-xl bg-navy-foreground/10 p-5 hover:bg-navy-foreground/20">Call / Text<br /><b>0995 148 0924</b></a>
           </div>
           <p className="mt-12 font-display text-2xl uppercase tracking-widest text-accent">Improve · Compete · Have Fun</p>
