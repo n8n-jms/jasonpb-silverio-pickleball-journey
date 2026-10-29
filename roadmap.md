@@ -1,7 +1,7 @@
 # Roadmap
 
-- [ ] Replace six uploaded photos, use public root-relative paths, and verify phone, tablet, and computer layouts
-- [ ] Change contact email to silverio.jason@gmail.com and verify booking submissions
+- [x] Replace six uploaded photos, use public root-relative paths, and verify phone, tablet, and computer layouts
+- [x] Change contact email to silverio.jason@gmail.com and verify booking submissions
 
 - [x] Remove the portrait's white background and fit it from Coach Jason to Book a Session without stretching
 
