@@ -1,5 +1,8 @@
 # Roadmap
 
+- [ ] Replace six uploaded photos, use public root-relative paths, and verify phone, tablet, and computer layouts
+- [ ] Change contact email to silverio.jason@gmail.com and verify booking submissions
+
 - [x] Remove the portrait's white background and fit it from Coach Jason to Book a Session without stretching
 
 - [x] Position the unchanged original photo to the right of the text, slightly zoomed and framed at the waist without stretching
@@ -15,4 +18,4 @@
 - [x] Replace the yellow "Paddle Circle Philippines" label at the top with the uploaded logo, sharp and undistorted
 - [x] Use uploaded IMG_1956 court photo as the lighter Session Details backdrop with readable text
 - [x] Set the browser tab icon from the logo's round mark
-- [ ] Optional: send booking requests to js@jasonsilverio.com by email (needs email sending turned on)
+- [ ] Send booking requests to silverio.jason@gmail.com by email (blocked: sender domain must be set up and verified)
