@@ -1,26 +1,15 @@
 import { useState } from "react";
-import { z } from "zod";
-import { supabase } from "@/integrations/supabase/client";
+import { useServerFn } from "@tanstack/react-start";
+import { bookingSchema as schema } from "@/lib/booking-schema";
+import { submitBooking } from "@/lib/booking.functions";
 import { Button } from "@/components/ui/button";
 import { availableStartTimes, isValidSessionTime } from "@/lib/coaching-schedule";
 
-const schema = z.object({
-  name: z.string().trim().min(1, "Please enter your name").max(100),
-  email: z.string().trim().email("Please enter a valid email").max(255),
-  phone: z.string().trim().min(5, "Please enter your phone number").max(30),
-  preferred_date: z.string().min(1, "Please pick a date"),
-  preferred_time: z.string().min(1, "Please pick a time"),
-  session_type: z.enum(["1-on-1", "Small group"]),
-  hours: z.coerce.number().int().min(2).max(6),
-  notes: z.string().trim().max(1000).optional(),
-}).refine((data) => isValidSessionTime(data.preferred_time, data.hours), {
-  message: "Please choose a session that finishes by 10:00 PM.",
-  path: ["preferred_time"],
-});
-
-const field = "w-full rounded-lg border border-input bg-background px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-ring";
+const field = "min-w-0 w-full max-w-full rounded-lg border border-input bg-background px-3 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-ring";
 
 export function BookingForm() {
+  const sendBooking = useServerFn(submitBooking);
+  const [emailed, setEmailed] = useState(false);
   const [status, setStatus] = useState<"idle" | "sending" | "done">("idle");
   const [error, setError] = useState<string | null>(null);
   const [hours, setHours] = useState(2);
@@ -35,8 +24,8 @@ export function BookingForm() {
     if (!parsed.success) return setError(parsed.error.issues[0]?.message ?? "Please check the form");
     setStatus("sending");
     try {
-      const { error } = await supabase.from("booking_requests").insert({ ...parsed.data, notes: parsed.data.notes || null });
-      if (error) throw error;
+      const result = await sendBooking({ data: parsed.data });
+      setEmailed(result.emailed);
       setStatus("done");
     } catch {
       setStatus("idle");
@@ -48,13 +37,14 @@ export function BookingForm() {
     return (
       <div className="rounded-2xl bg-card p-10 text-center text-card-foreground">
         <h3 className="font-display text-3xl uppercase">Request sent!</h3>
-        <p className="mt-3 text-lg">Thanks! I'll get back to you to confirm your session and court.</p>
+        <p className="mt-3 text-lg">{emailed ? "Your booking request has been saved and emailed to Coach Jason." : "Your request has been saved, but the email alert couldn't be sent. Please contact Coach Jason directly if needed."}</p>
+        <p className="mt-3">Thanks! I'll get back to you to confirm your session and court.</p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={onSubmit} className="grid gap-4 rounded-2xl bg-card p-6 text-left text-card-foreground sm:grid-cols-2 sm:p-10">
+    <form onSubmit={onSubmit} className="grid min-w-0 gap-4 rounded-2xl bg-card p-4 text-left text-card-foreground sm:grid-cols-2 sm:p-10">
       <label className="grid gap-1 font-semibold">Full name<input name="name" maxLength={100} required className={field} /></label>
       <label className="grid gap-1 font-semibold">Phone<input name="phone" type="tel" maxLength={30} required className={field} /></label>
       <label className="grid gap-1 font-semibold sm:col-span-2">Email<input name="email" type="email" maxLength={255} required className={field} /></label>

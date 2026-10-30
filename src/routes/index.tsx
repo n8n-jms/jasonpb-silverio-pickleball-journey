@@ -64,7 +64,7 @@ function Index() {
             <div className="mb-3 inline-flex items-center rounded-lg bg-background px-3 py-2 shadow-sm md:mb-4 md:px-4 md:py-3">
               <img src={logo} alt="Paddle Circle Philippines" width={1070} height={312} decoding="async" className="h-auto w-36 max-w-full object-contain md:w-72" />
             </div>
-            <h1 className="font-display text-5xl uppercase leading-[0.9] md:text-8xl lg:text-9xl">Coach<br />Jason</h1>
+             <h1 className="font-display text-4xl uppercase leading-[0.9] min-[375px]:text-5xl md:text-7xl lg:text-9xl">Coach<br />Jason</h1>
             <p className="skew-tag mt-4 inline-block bg-accent px-2 py-2 text-xs font-bold uppercase text-accent-foreground md:mt-6 md:px-4 md:text-base">Private Pickleball Coaching</p>
             <p className="mt-4 font-script text-lg leading-snug md:mt-6 md:text-3xl">Build your game.<br />Train with confidence.<br />Play better.</p>
             <a href="#contact" className="mt-5 inline-block rounded-full bg-accent px-4 py-3 text-xs font-bold uppercase text-accent-foreground transition hover:scale-105 md:mt-8 md:px-8 md:text-base">Book a Session</a>
@@ -81,7 +81,7 @@ function Index() {
         <div aria-hidden="true" className="absolute inset-0 grid grid-rows-3">{journeyPhotos.map((photo) => (<div key={photo} className="relative min-h-0 overflow-hidden"><img src={photo} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover object-center" /></div>))}</div>
         <div className="absolute inset-0 bg-background/85" />
         <div className="relative mx-auto max-w-4xl px-6">
-          <h2 className="font-display text-5xl uppercase text-navy">My Coaching Journey</h2>
+           <h2 className="font-display text-4xl uppercase text-navy sm:text-5xl">My Coaching Journey</h2>
           <ol className="mt-10 space-y-8 border-l-4 border-accent pl-8">
             {journey.map((j) => (
               <li key={j.y} className="relative">
@@ -100,7 +100,7 @@ function Index() {
         <img src={whyTrainBg} alt="" aria-hidden="true" loading="lazy" className="absolute inset-0 h-full w-full object-cover object-center" />
         <div className="absolute inset-0 bg-background/85" />
         <div className="relative mx-auto max-w-6xl px-6">
-          <h2 className="font-display text-5xl uppercase text-navy">Why Train with <span className="text-primary">Coach Jason</span></h2>
+           <h2 className="font-display text-4xl uppercase text-navy sm:text-5xl">Why Train with <span className="text-primary">Coach Jason</span></h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {reasons.map((r, i) => (
               <div key={r.t} className="rounded-xl bg-card/95 p-6 shadow-md ring-1 ring-navy/5">
@@ -117,9 +117,9 @@ function Index() {
         <img src={sessionBg} alt="" aria-hidden="true" loading="lazy" className="absolute inset-0 h-full w-full object-cover object-center" />
         <div className="absolute inset-0 bg-background/85" />
         <div className="relative mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-2">
-          <div className="rounded-2xl bg-navy p-10 text-navy-foreground">
+           <div className="min-w-0 rounded-2xl bg-navy p-6 text-navy-foreground lg:p-10">
             <p className="font-bold uppercase tracking-widest text-accent">Rate</p>
-            <p className="mt-2 font-display text-8xl">₱400<span className="font-script text-3xl"> per hour</span></p>
+             <p className="mt-2 font-display text-6xl sm:text-7xl lg:text-8xl">₱400<span className="mt-2 block font-script text-3xl">per hour</span></p>
             <p className="mt-4 text-lg">Minimum of 2 hours</p>
             <p className="skew-tag mt-4 inline-block bg-accent px-4 py-2 font-bold text-accent-foreground">Starting at ₱800 per session</p>
           </div>
