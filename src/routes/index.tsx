@@ -59,15 +59,15 @@ function Index() {
   return (
     <main className="overflow-hidden">
       <section className="bg-hero text-navy-foreground">
-        <div className="mx-auto grid max-w-6xl grid-cols-[auto_minmax(0,1fr)] items-stretch gap-x-3 px-5 md:gap-x-6 md:px-6">
+        <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,0.95fr)_minmax(0,1fr)] items-stretch gap-x-3 px-4 sm:grid-cols-[auto_minmax(0,1fr)] md:gap-x-6 md:px-6">
           <div className="flex min-w-0 flex-col items-start py-10 md:py-16">
-            <div className="mb-3 inline-flex items-center rounded-lg bg-background px-3 py-2 shadow-sm md:mb-4 md:px-4 md:py-3">
+            <div className="mb-3 inline-flex max-w-full items-center rounded-lg bg-background px-3 py-2 shadow-sm md:mb-4 md:px-4 md:py-3">
               <img src={logo} alt="Paddle Circle Philippines" width={1070} height={312} decoding="async" className="h-auto w-36 max-w-full object-contain md:w-72" />
             </div>
              <h1 className="font-display text-4xl uppercase leading-[0.9] min-[375px]:text-5xl md:text-7xl lg:text-9xl">Coach<br />Jason</h1>
-            <p className="skew-tag mt-4 inline-block bg-accent px-2 py-2 text-xs font-bold uppercase text-accent-foreground md:mt-6 md:px-4 md:text-base">Private Pickleball Coaching</p>
+            <p className="skew-tag mt-4 inline-block max-w-full bg-accent px-2 py-2 text-xs font-bold uppercase text-accent-foreground md:mt-6 md:px-4 md:text-base">Private Pickleball Coaching</p>
             <p className="mt-4 font-script text-lg leading-snug md:mt-6 md:text-3xl">Build your game.<br />Train with confidence.<br />Play better.</p>
-            <a href="#contact" className="mt-5 inline-block rounded-full bg-accent px-4 py-3 text-xs font-bold uppercase text-accent-foreground transition hover:scale-105 md:mt-8 md:px-8 md:text-base">Book a Session</a>
+            <a href="#book" className="mt-5 inline-block rounded-full bg-accent px-4 py-3 text-xs font-bold uppercase text-accent-foreground transition hover:scale-105 md:mt-8 md:px-8 md:text-base">Book a Session</a>
           </div>
           <div className="min-w-0 self-stretch pt-4 md:pt-6">
             <figure className="relative h-full w-full overflow-hidden md:max-w-[30rem]">
