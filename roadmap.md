@@ -21,4 +21,5 @@
 - [x] Replace the yellow "Paddle Circle Philippines" label at the top with the uploaded logo, sharp and undistorted
 - [x] Use uploaded IMG_1956 court photo as the lighter Session Details backdrop with readable text
 - [x] Set the browser tab icon from the logo's round mark
-- [ ] Send booking requests to silverio.jason@gmail.com by email (blocked: sender domain must be set up and verified)
+- [ ] Connect Gmail and send booking notifications to silverio.jason@gmail.com
+- [ ] Check and adjust layout, text, and photos for phones, tablets, and desktop monitors
