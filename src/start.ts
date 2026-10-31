@@ -1,7 +1,7 @@
 import { createStart, createCsrfMiddleware, createMiddleware } from "@tanstack/react-start";
 
 import { renderErrorPage } from "./lib/error-page";
-import { attachSupabaseAuth } from "@/integrations/supabase/auth-attacher";
+import { bookingSafeAuth } from "@/lib/booking-safe-auth";
 
 const errorMiddleware = createMiddleware().server(async ({ next }) => {
   try {
@@ -26,6 +26,8 @@ const csrfMiddleware = createCsrfMiddleware({
 });
 
 export const startInstance = createStart(() => ({
-  functionMiddleware: [attachSupabaseAuth],
+  // Session lookup is best-effort for public bookings; protected handlers
+  // continue to enforce authentication server-side.
+  functionMiddleware: [bookingSafeAuth],
   requestMiddleware: [errorMiddleware, csrfMiddleware],
 }));
