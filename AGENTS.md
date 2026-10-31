@@ -14,3 +14,4 @@
 - Use fixed equal grid tracks with absolutely positioned object-cover images for stacked section backdrops so intrinsic image sizes cannot overflow or distort the section.
 - Derive booking start times from a shared schedule module and selected duration so each session finishes within coaching hours.
 - Validate bookings with a shared schema and save them in a dedicated server function before sending a fixed-recipient Gmail notification; keep requests stored if Gmail fails.
+- Use best-effort client bearer attachment so blocked browser storage cannot prevent public bookings; authenticated server functions must still enforce their server-side auth checks.

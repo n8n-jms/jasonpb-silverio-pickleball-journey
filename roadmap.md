@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Fix booking failure when browser storage is blocked, test public submissions, and confirm Gmail delivery
+
 - [x] Replace the top logo with the latest upload and check its proportions at all three screen sizes
 - [x] Apply confirmed daily coaching hours and keep requested sessions within closing time
 
