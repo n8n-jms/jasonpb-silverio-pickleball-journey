@@ -34,14 +34,16 @@ const journey = [
     y: "From Passion to Purpose — Playing, Growing, and Inspiring Others",
     d: [
       "Every journey begins with a first step. Mine began with a simple love for sports, a willingness to learn, and a desire to challenge myself. What started as an exciting experience on the pickleball court has grown into something much bigger—a journey of personal growth, meaningful friendships, competition, coaching, community, and faith.",
-      "My pickleball journey is built on passion, continuous learning, faith, and a love for helping others grow. As a PhPA Certified Pickleball Coach, an active tournament player, and a medal-winning competitor, I believe that every player has the potential to improve with the right guidance, consistent practice, and a positive mindset.",
-      "Whether you're picking up a paddle for the first time or looking to sharpen your skills, I'm here to help you build confidence, master the fundamentals, and enjoy every moment on the court.",
+      "My pickleball journey is built on passion, continuous learning, faith, and a love for helping others grow. As a PhPA Certified Pickleball Coach, Selkirk International Advocate and Brand Ambassador, an active tournament player, and a medal-winning competitor, I believe that every player has the potential to improve with the right guidance, consistent practice, and a positive mindset. I am incredibly blessed to bridge local grassroots community play with global standards.",
+      "Whether you're picking up a paddle for the first time, looking to sharpen your skills, or testing out top-tier gear to elevate your game, I'm here to help you build confidence, master the fundamentals, and enjoy every moment on the court.",
       "For me, coaching is more than teaching techniques. It's about celebrating progress, building friendships, and helping you become a better player, one shot at a time.",
       "Ready to take your game to the next level? Let's get on the court, work on your goals, and enjoy the journey together!",
       "By God's grace, let's grow through the game.",
     ],
   },
   { y: "Certified", d: "Earned the PhPA Level 1 Pickleball Coach certification to teach the game the right way." },
+  { y: "Selkirk International Advocate & Brand Ambassador", d: "Representing Selkirk internationally and bringing world-class pickleball gear and standards to the local community." },
+  { y: "Selkirk Demo Days", d: "Hosting community and member-based events where players can try out a variety of Selkirk paddles in a fun, hands-on environment." },
   { y: "Paddle Circle PH", d: "Coaching with Paddle Circle Philippines — One Game. One Circle. One Purpose." },
   { y: "Today", d: "Helping beginners and developing players improve, compete, and have fun on court." },
 ];
