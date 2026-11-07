@@ -23,13 +23,31 @@ export function BookingForm() {
     const parsed = schema.safeParse(Object.fromEntries(new FormData(e.currentTarget)));
     if (!parsed.success) return setError(parsed.error.issues[0]?.message ?? "Please check the form");
     setStatus("sending");
+    // Try the server (saves + emails Coach Jason) twice, then fall back to saving directly
+    // so a visitor's request is never lost (e.g. a stale open tab after a site update).
+    for (let attempt = 0; attempt < 2; attempt++) {
+      try {
+        const result = await sendBooking({ data: parsed.data });
+        setEmailed(result.emailed);
+        setStatus("done");
+        return;
+      } catch (err) {
+        console.error("Booking submit attempt failed", err);
+        if (attempt === 0) await new Promise((r) => setTimeout(r, 1200));
+      }
+    }
     try {
-      const result = await sendBooking({ data: parsed.data });
-      setEmailed(result.emailed);
+      const { supabase } = await import("@/integrations/supabase/client");
+      const { error: insertError } = await supabase.from("booking_requests").insert({
+        ...parsed.data, notes: parsed.data.notes || null,
+      });
+      if (insertError) throw insertError;
+      setEmailed(false);
       setStatus("done");
-    } catch {
+    } catch (err) {
+      console.error("Booking fallback save failed", err);
       setStatus("idle");
-      return setError("Something went wrong. Please try again or contact me directly.");
+      setError("Something went wrong. Please refresh the page and try again, or contact me directly.");
     }
   }
 
