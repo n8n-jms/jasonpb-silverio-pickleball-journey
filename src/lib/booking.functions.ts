@@ -11,6 +11,7 @@ export const submitBooking = createServerFn({ method: "POST" })
     const { error } = await supabaseAdmin.from("booking_requests").insert({
       ...data, id, notes: data.notes || null,
     });
+    if (error) { console.error("booking insert failed", JSON.stringify(error)); }
     if (error) throw new Error("Your booking could not be saved. Please try again.");
 
     const apiKey = process.env["LOVABLE_API_KEY"];
